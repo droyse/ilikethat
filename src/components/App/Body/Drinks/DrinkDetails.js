@@ -1,14 +1,25 @@
 import React from 'react'
+import './index.css'
 
 const DrinkDetails = ({
   name,
   image,
-  description
+  description,
+  stars
 }) => {
-  return <li>
-    <h3>{name}</h3>
-    <img src={image} alt='bottle of drink'/>
-    <p>{description}</p>
-  </li>
+  return <div class="flex-container">
+    <div>
+      <img src={image} alt='bottle of drink'/>
+    </div>
+    <div>
+      {name}
+    </div>
+    <div>
+      {description}
+    </div>
+    <div>
+      {stars}
+    </div>
+  </div>
 }
 export default DrinkDetails
