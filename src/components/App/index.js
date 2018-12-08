@@ -1,14 +1,10 @@
 import React from 'react'
 import './index.css'
 
-import Drink from './Drink'
-import Drinks from './Drinks'
-import AddDrink from './AddDrink'
+import Body from './Body';
  
 const App = () => <div>
-  <Drink />
-  <Drinks />
-  <AddDrink />
+  <Body />
 </div>
 
 export default App
