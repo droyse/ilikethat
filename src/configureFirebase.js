@@ -19,8 +19,3 @@ firebase.initializeApp({
 })
 
 firebase.firestore().settings({timestampsInSnapshots: true})
-
-console.error('deleteme:')
-window.drinksCollection = firebase.firestore().collection('drinks')
-
-window.drinksCollection.get().then(snapshot => window.drinks = snapshot)

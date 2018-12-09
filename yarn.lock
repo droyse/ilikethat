@@ -8547,7 +8547,12 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@^6.1.0:
+rxfire@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/rxfire/-/rxfire-3.2.0.tgz#aec207cd00ec0b2f3424d49a35186d1da4ce48d9"
+  integrity sha512-V9bTJNtwOVq//kZhwOshLQsAHABJdKOEqXlHCsqiz7UmBs5DdCUKKe5W4hcTXI6yck2OpYgweauWRbsgtTVVXQ==
+
+rxjs@^6.1.0, rxjs@^6.3.3:
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.3.3.tgz#3c6a7fa420e844a81390fb1158a9ec614f4bad55"
   integrity sha512-JTWmoY9tWCs7zvIk/CvRjhjGaOd+OVBM987mxFo+OW66cGpdKjZcpmc74ES1sB//7Kl/PAe8+wEakuhG4pcgOw==

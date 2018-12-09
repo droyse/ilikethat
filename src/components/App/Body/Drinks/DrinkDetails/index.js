@@ -5,9 +5,9 @@ const DrinkDetails = ({
   name,
   image,
   description,
-  stars
+  starRating
 }) => {
-  return <div class="flex-container">
+  return <div className="flex-container">
     <div>
       <img src={image} alt='bottle of drink'/>
     </div>
@@ -18,7 +18,7 @@ const DrinkDetails = ({
       {description}
     </div>
     <div>
-      {stars}
+      {starRating}
     </div>
   </div>
 }

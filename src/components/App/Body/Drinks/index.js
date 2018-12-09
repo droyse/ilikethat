@@ -1,46 +1,38 @@
 import React from 'react'
+import firebase from 'firebase/app'
+import { collectionData } from 'rxfire/firestore'
+
 import DrinkDetails from './DrinkDetails'
 
-const drinks = [
-  {
-    id: 1,
-    name: 'whisky',
-    description: 'a delicious whisky',
-    image: 'images/talisker-25.jpg',
-    stars: '5 stars',
-  },
-  {
-    id: 2,
-    name: 'scotch',
-    description: 'a delicious scotch',
-    stars: '5 stars',
-  },
-  {
-    id: 3,
-    name: 'gin',
-    description: 'a delicious gin',
-    stars: '5 stars',
-  },
-  {
-    id: 4,
-    name: 'beer',
-    description: 'a delicious beer',
-    stars: '5 stars',
-  },
-  {
-    id: 5,
-    name: 'juice',
-    description: 'a delicious juice',
-    stars: '5 stars',
-  },
-]
+const Loading = () => <div>Loading drinks...</div>
 
-const Drinks = () => <div>
-  <h1>Hello, I'm all the drinks</h1>
-  {drinks.map(drink => <DrinkDetails
-    key={drink.id}
-    {...drink}
-  />)}
-</div>
+export default class Drinks extends React.Component {
+  state = {}
 
-export default Drinks
+  constructor() {
+    super()
+    const drinksRef = firebase.firestore().collection('drinks')
+
+    this.drinksSubscription = collectionData(drinksRef, 'id')
+      .subscribe(drinks => this.setState({drinks}))
+  }
+
+  componentWillUnmount() {
+    this.drinksSubscription.unsubscribe()
+  }
+
+  render() {
+    const {drinks} = this.state
+
+    return <div>
+      <h1>Hello, I'm all the drinks</h1>
+      {drinks
+        ? drinks.map(drink => <DrinkDetails
+          key={drink.id}
+          {...drink}
+          />)
+        : <Loading/>
+      }
+    </div>
+  }
+}
