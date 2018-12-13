@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Drink from './Drink'
+// import Drink from './Drink'
 import Drinks from './Drinks'
-import AddDrink from './AddDrink'
+// import AddDrink from './AddDrink'
  
 const Body = () => <div>
   {/* <Drink /> */}
