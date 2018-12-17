@@ -25,7 +25,6 @@ export default class Drinks extends React.Component {
     const {drinks} = this.state
 
     return <div>
-      <h1>Hello, I'm all the drinks</h1>
       {drinks
         ? drinks.map(drink => <DrinkDetails
           key={drink.id}

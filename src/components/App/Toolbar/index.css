@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: darkbLue;
+    background: #fafafa;
     height: 56px;
 }
 
@@ -16,10 +16,11 @@
 
 .toolbar_logo {
     margin-left: 1rem;
+    color: rgb(50, 50, 50)
 }
 
 .toolbar_logo a {
-    color: whitesmoke;
+    color: rgb(50, 50, 50);
     text-decoration: none;
     font-size: 1.5rem;
 }
@@ -40,13 +41,13 @@
 }
 
 .toolbar_navigation-items a {
-    color: whitesmoke;
+    color: rgb(50, 50, 50);
     text-decoration: none;
 }
 
 .toolbar_navigation-items a:hover,
 .toolbar_navigation-items a:active {
-    color: orange;
+    color: black;
 }
 
 @media (max-width: 768px) {
