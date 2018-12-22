@@ -5,6 +5,14 @@ import SideDrawer from './SideDrawer';
 import Toolbar from './Toolbar';
 import Backdrop from './Backdrop';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faStar, faStarHalf, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
+import { faStar as farFaStar } from '@fortawesome/free-regular-svg-icons'
+
+
+library.add( faStar, faStarHalf, faStarHalfAlt, farFaStar )
+
 class App extends Component {
   state = {
     sideDrawerOpen: false

@@ -8,6 +8,7 @@ const Body = () => <div>
   {/* <Drink /> */}
   <Drinks />
   {/* <AddDrink /> */}
+  {/* <StarRating /> */}
 </div>
 
 export default Body

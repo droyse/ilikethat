@@ -1,5 +1,6 @@
 import React from 'react'
 import FirebaseStorageImg from './FirebaseStorageImg.js'
+import StarRating from '../../../StarRating'
 import './index.css'
   
 const DrinkDetails = ({
@@ -7,7 +8,10 @@ const DrinkDetails = ({
   id,
   image,
   description,
-  starRating
+  starRating,
+  nose,
+  palate,
+  finish
 }) => {
   return <div className="flex-container">
     <div>
@@ -18,8 +22,11 @@ const DrinkDetails = ({
     </div>
     <div>
       <h3>{name}</h3>
-      <p>{starRating}</p>
-      <p>{description}</p>
+      <p><StarRating rating={starRating} /></p>
+      <p><b>Nose: </b>{nose}</p>
+      <p><b>Palate: </b>{palate}</p>
+      <p><b>Finish: </b>{finish}</p>
+      <p><i>{description}</i></p>
     </div>
   </div>
 }
