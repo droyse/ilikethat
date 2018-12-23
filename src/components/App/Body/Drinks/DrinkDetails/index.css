@@ -1,18 +1,35 @@
-.flex-container {
+  .drink-row {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: #fafafa;
-    align-items: top;
-  }
-
-    
-  .flex-container > div {
-    background-color: #fafafa;
-    margin: 10px;
-    padding: 10px;
-  }
-
-  img {
     height: 25vh;
+    overflow: hidden;
+    margin: 5px;
+    max-width: 1500px;
   }
+
+  .drink-row a,
+  .drink-row a:hover,
+  .drink-row a:active
+   {
+    text-emphasis: none;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .bottle-img {
+    /* background-color: red; */
+    flex: 0 0 30%;
+    text-align: center;
+    margin: 5px;
+  }
+
+  .bottle-img img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+.drink-description {
+  /* background-color: palegoldenrod; */
+  margin: 5px;
+}

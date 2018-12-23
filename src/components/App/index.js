@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
-import './index.css'
-import Body from './Body';
-import SideDrawer from './SideDrawer';
-import Toolbar from './Toolbar';
-import Backdrop from './Backdrop';
+import { BrowserRouter, Route }  from 'react-router-dom'
 
+
+// Body components
+import './index.css'
+import Drinks from './Body/Drinks'
+import Drink from './Body/Drink'
+
+// Shared components
+import SideDrawer from '../shared/SideDrawer';
+import Toolbar from '../shared/Toolbar';
+import Backdrop from '../shared/Backdrop';
+
+// Font Awesome icons used within app
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faStar, faStarHalf, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
 import { faStar as farFaStar } from '@fortawesome/free-regular-svg-icons'
-
-
 library.add( faStar, faStarHalf, faStarHalfAlt, farFaStar )
 
 class App extends Component {
@@ -36,14 +42,18 @@ class App extends Component {
     }
 
     return (
-      <div style={{height: '100%'}}>
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-        <SideDrawer show={this.state.sideDrawerOpen}/>
-        {backdrop}   
-        <main style={{marginTop: '64px'}}>
-          <Body />
-        </main>
-      </div>
+      <BrowserRouter>
+        <div style={{height: '100%'}}>
+          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+          <SideDrawer show={this.state.sideDrawerOpen}/>
+          {backdrop}   
+          <main style={{marginTop: '64px'}}>
+            <Route exact path='/' component={Drinks} />
+            <Route path='/drinks' component={Drinks} />
+            <Route path='/drink' component={Drink} />
+          </main>
+        </div>
+      </BrowserRouter>
     );
   }
 }
